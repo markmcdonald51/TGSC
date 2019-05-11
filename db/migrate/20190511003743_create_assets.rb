@@ -16,6 +16,7 @@ class CreateAssets < ActiveRecord::Migration[5.2]
       t.integer :sort_order, default: 0
       t.integer :width
       t.integer :height
+      t.integer "attachment_id", index: true
 
       t.timestamps
     end

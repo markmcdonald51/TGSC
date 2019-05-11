@@ -25,8 +25,10 @@ ActiveRecord::Schema.define(version: 2019_05_11_013303) do
     t.integer "sort_order", default: 0
     t.integer "width"
     t.integer "height"
+    t.integer "attachment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["attachment_id"], name: "index_assets_on_attachment_id"
     t.index ["guid"], name: "index_assets_on_guid"
     t.index ["public_token"], name: "index_assets_on_public_token"
     t.index ["user_id"], name: "index_assets_on_user_id"

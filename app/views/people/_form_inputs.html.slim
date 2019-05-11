@@ -1,0 +1,29 @@
+.form-inputs
+  .row
+    .col-md-12  
+      .row
+        .col-md-6
+          = f.input :first_name, required: true, autofocus: true
+        .col-md-6
+          = f.input :last_name, required: true
+      .row     
+        .col-md-8
+          = f.input :full_address, required: true
+        .col-md-4  
+          = f.input :birth_date,  as: :date, start_year: Date.today.year - 90, \
+            end_year: Date.today.year - 12, order: [:month, :day, :year]
+      
+      .row
+        .col-md-4
+          = f.input :email, required: true      
+        .col-md-4
+          = f.input :mobile_phone
+        .col-md-4
+          = f.input :picture, as: :uploader, input_html: { sortable: true }
+      
+      
+      /
+        = f.association :personable
+        = f.input :lat
+        = f.input :lng
+
