@@ -1,0 +1,33 @@
+p#notice = notice
+
+p
+  strong First name:
+  = @person.first_name
+p
+  strong Last name:
+  = @person.last_name
+p
+  strong Birth date:
+  = @person.birth_date
+p
+  strong Email:
+  = @person.email
+p
+  strong Mobile phone:
+  = @person.mobile_phone
+p
+  strong Full address:
+  = @person.full_address
+p
+  strong Personable:
+  = @person.personable
+p
+  strong Lat:
+  = @person.lat
+p
+  strong Lng:
+  = @person.lng
+
+=> link_to 'Edit', edit_person_path(@person)
+'|
+=< link_to 'Back', people_path

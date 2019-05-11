@@ -1,0 +1,37 @@
+h1 Listing people
+
+table.table
+  thead
+    tr
+      th First name
+      th Last name
+      th Birth date
+      th Email
+      th Mobile phone
+      th Full address
+      th Personable
+      th Lat
+      th Lng
+      th
+      th
+      th
+
+  tbody
+    - @people.each do |person|
+      tr
+        td = person.first_name
+        td = person.last_name
+        td = person.birth_date
+        td = person.email
+        td = person.mobile_phone
+        td = person.full_address
+        td = person.personable
+        td = person.lat
+        td = person.lng
+        td = link_to 'Show', person
+        td = link_to 'Edit', edit_person_path(person)
+        td = link_to 'Destroy', person, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Person', new_person_path
