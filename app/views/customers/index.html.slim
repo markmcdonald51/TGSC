@@ -1,0 +1,25 @@
+h1 Listing customers
+
+table
+  thead
+    tr
+      th Membership level
+      th Aasm state
+      th Last pay date
+      th
+      th
+      th
+
+  tbody
+    - @customers.each do |customer|
+      tr
+        td = customer.membership_level
+        td = customer.aasm_state
+        td = customer.last_pay_date
+        td = link_to 'Show', customer
+        td = link_to 'Edit', edit_customer_path(customer)
+        td = link_to 'Destroy', customer, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Customer', new_customer_path

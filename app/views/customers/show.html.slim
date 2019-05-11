@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Membership level:
+  = @customer.membership_level
+p
+  strong Aasm state:
+  = @customer.aasm_state
+p
+  strong Last pay date:
+  = @customer.last_pay_date
+
+=> link_to 'Edit', edit_customer_path(@customer)
+'|
+=< link_to 'Back', customers_path

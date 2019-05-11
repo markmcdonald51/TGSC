@@ -16,6 +16,7 @@
 //= require rails-ujs
 //= require activestorage
 //= require uploader/application
+//= require trix
 
 //= require turbolinks
 //= require_tree .

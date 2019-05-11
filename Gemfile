@@ -19,6 +19,18 @@ gem 'carrierwave'
 gem 'rails-uploader'
 gem "mini_magick"
 gem 'file_validators'
+gem 'aasm'
+gem 'devise-bootstrap-views'
+gem 'cancancan'
+gem "slim-rails"
+gem 'simple_form'
+gem 'bootstrap'
+gem 'jquery-rails'
+gem 'country_select'
+gem 'geocoder'
+gem "select2-rails"
+gem 'trix-rails', require: 'trix'
+#gem "nested_form", github: 'markmcdonald51/nested_form' 
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -40,12 +52,8 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-gem "slim-rails"
-gem 'simple_form'
-gem 'bootstrap'
-gem 'jquery-rails'
-gem 'country_select'
-gem 'geocoder'
+
+#gem "nested_form", github: 'markmcdonald51/nested_form' 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

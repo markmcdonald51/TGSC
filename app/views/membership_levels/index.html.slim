@@ -1,0 +1,29 @@
+h1 Listing membership_levels
+
+table.table
+  thead
+    tr
+      th Name
+      th Position
+      th Description
+      th Duration
+      th Usd cost
+      th
+      th
+      th
+
+  tbody
+    - @membership_levels.each do |membership_level|
+      tr
+        td = membership_level.name
+        td = membership_level.position
+        td = membership_level.description
+        td = membership_level.duration
+        td = membership_level.usd_cost
+        td = link_to 'Show', membership_level
+        td = link_to 'Edit', edit_membership_level_path(membership_level)
+        td = link_to 'Destroy', membership_level, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Membership level', new_membership_level_path

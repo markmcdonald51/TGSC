@@ -1,0 +1,14 @@
+= simple_form_for(@membership_level) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    = f.input :name
+    / = f.input :position
+    = f.input :description, as: :trix_editor
+    = f.input :duration
+    = f.input :usd_cost
+    = f.input :pictures, as: :uploader, input_html: { sortable: true }
+
+  .form-actions
+    = f.button :submit

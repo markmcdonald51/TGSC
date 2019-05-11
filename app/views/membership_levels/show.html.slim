@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @membership_level.name
+p
+  strong Position:
+  = @membership_level.position
+p
+  strong Description:
+  = @membership_level.description
+p
+  strong Duration:
+  = @membership_level.duration
+p
+  strong Usd cost:
+  = @membership_level.usd_cost
+
+=> link_to 'Edit', edit_membership_level_path(@membership_level)
+'|
+=< link_to 'Back', membership_levels_path

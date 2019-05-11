@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_11_003743) do
+ActiveRecord::Schema.define(version: 2019_05_11_013303) do
 
   create_table "assets", force: :cascade do |t|
     t.string "data_file_name", null: false
@@ -30,6 +30,25 @@ ActiveRecord::Schema.define(version: 2019_05_11_003743) do
     t.index ["guid"], name: "index_assets_on_guid"
     t.index ["public_token"], name: "index_assets_on_public_token"
     t.index ["user_id"], name: "index_assets_on_user_id"
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.integer "membership_level_id"
+    t.string "aasm_state"
+    t.date "last_pay_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["membership_level_id"], name: "index_customers_on_membership_level_id"
+  end
+
+  create_table "membership_levels", force: :cascade do |t|
+    t.string "name"
+    t.string "position"
+    t.text "description"
+    t.string "duration"
+    t.decimal "usd_cost"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "people", force: :cascade do |t|
