@@ -19,7 +19,7 @@
         .col-md-4
           = f.input :mobile_phone
         .col-md-4
-          = f.input :picture, as: :uploader, input_html: { sortable: true }
+          = f.input :picture, as: :uploader, input_html: { sortable: true }, :confirm_delete => true
       
       
       /

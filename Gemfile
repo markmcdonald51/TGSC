@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
+gem 'jquery-ui-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
@@ -16,7 +17,8 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 gem 'carrierwave'
-gem 'rails-uploader'
+#gem 'rails-uploader'
+gem 'rails-uploader', github: 'markmcdonald51/rails-uploader2'
 gem "mini_magick"
 gem 'file_validators'
 gem 'aasm'
