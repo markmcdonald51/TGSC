@@ -235,6 +235,7 @@ input[disabled].uploader-button.gray {
 .uploader-dnd-area .attach_item.loading .progressBar {
   display: block;
 }
+
 .uploader-dnd-area .attach_item .thumbnail.preview img {
   width: 50px;
 }
@@ -242,3 +243,61 @@ input[disabled].uploader-button.gray {
   margin-top: 6px;
   display: inline-block;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+	Uploader: 
+	- These styles are the ones used on the examples. No needed to use it by any means.
+	- It disables user selection to avoid some weird visuals in some browsers
+	- It masks/hides the the file input behind a button
+ */
+
+.dm-uploader {
+	cursor: default;
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.dm-uploader .btn {
+	position: relative;
+	overflow: hidden;
+}
+
+.dm-uploader .btn input[type="file"] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	border: solid transparent;
+	width: 100%;
+	opacity: .0;
+	filter: alpha(opacity= 0);
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+

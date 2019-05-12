@@ -3,12 +3,21 @@
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
   .form-inputs
-    = f.input :name
+    .row
+      .col-md-8
+        = f.input :name
+      .col-md-2  
+        = f.input :duration, collection: [:daily, :monthly, :bimonthly, :yearly]
+      .col-md-2
+        = f.input :usd_cost
+    
     / = f.input :position
-    = f.input :description, as: :trix_editor
-    = f.input :duration
-    = f.input :usd_cost
-    = f.input :pictures, as: :uploader, input_html: { sortable: true }
+    
+    .row
+      = f.input :description, as: :trix_editor
+
+    .row
+      = f.input :pictures, as: :uploader, input_html: { sortable: true }
 
   .form-actions
-    = f.button :submit
+    = f.button :submit,  class: 'btn-success'
