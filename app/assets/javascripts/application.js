@@ -18,6 +18,8 @@
 //= require activestorage
 //= require uploader/application
 //= require trix
+//= require jquery-ui/widgets/sortable
+//= require rails_sortable
 
 
 //= require turbolinks

@@ -12,9 +12,9 @@ table.table
       th
       th
 
-  tbody
+  tbody.sortable
     - @membership_levels.each do |membership_level|
-      tr
+      tr id="#{membership_level.sortable_id}"
         td = membership_level.name
         td = membership_level.position
         td = membership_level.description

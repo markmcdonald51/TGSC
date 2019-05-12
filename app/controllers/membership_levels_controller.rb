@@ -4,7 +4,7 @@ class MembershipLevelsController < ApplicationController
   # GET /membership_levels
   # GET /membership_levels.json
   def index
-    @membership_levels = MembershipLevel.all
+    @membership_levels = MembershipLevel.order(:position).all
   end
 
   # GET /membership_levels/1
