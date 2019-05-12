@@ -1,0 +1,22 @@
+h1 Listing facilities
+table.table
+  thead
+    tr
+      th Name
+      th Description
+      th
+      th
+      th
+
+  tbody.sortable
+    - @facilities.each do |facility|
+      tr id="#{facility.sortable_id}"
+        td = facility.name
+        td = facility.description
+        td = link_to 'Show', facility
+        td = link_to 'Edit', edit_facility_path(facility)
+        td = link_to 'Destroy', facility, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Facility', new_facility_path

@@ -1,11 +1,10 @@
 h1 Listing membership_levels
 
-table.table
+table.table.table-hover
   thead
     tr
       th Name
-      th Position
-      th Description
+      / th Description
       th Duration
       th Usd cost
       th
@@ -16,8 +15,8 @@ table.table
     - @membership_levels.each do |membership_level|
       tr id="#{membership_level.sortable_id}"
         td = membership_level.name
-        td = membership_level.position
-        td = membership_level.description
+        / td = membership_level.position
+        / td = membership_level.description.truncate(27, separator: /\s/)
         td = membership_level.duration
         td = membership_level.usd_cost
         td = link_to 'Show', membership_level

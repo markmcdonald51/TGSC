@@ -1,8 +1,13 @@
 class MembershipLevel < ApplicationRecord
-  has_many :customers
-  has_many :pictures, as: :assetable, dependent: :destroy
   fileuploads :pictures
   
   include RailsSortable::Model
   set_sortable :position  # Indicate a sort column
+  
+  has_many :customers
+  has_many :pictures, as: :assetable, dependent: :destroy
+  
+  has_many :membership_accessable_facilities
+  has_many :facilities, through: :membership_accessable_facilities
+     
 end

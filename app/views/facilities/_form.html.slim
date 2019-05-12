@@ -1,0 +1,21 @@
+= simple_form_for(@facility) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    .row
+      .col.md-12
+        = f.input :name, class: 'input-lg'
+
+    .row
+      .col.md-12
+        = f.input :description, as: :trix_editor
+
+    .row
+      .col-md-12
+        = f.input :pictures, as: :uploader, input_html: { sortable: true }
+
+
+
+  .form-actions
+    = f.button :submit

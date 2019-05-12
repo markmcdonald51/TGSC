@@ -20,7 +20,15 @@
 //= require trix
 //= require jquery-ui/widgets/sortable
 //= require rails_sortable
+// require select2_simple_form
 
 
 //= require turbolinks
+//= require datatables
 //= require_tree .
+
+
+$(document).ready(function() {
+  $('#dttb').dataTable();
+});
+

@@ -4,20 +4,22 @@
 
   .form-inputs
     .row
-      .col-md-8
+      .col-md-6
         = f.input :name
+      .col-md-3
+        = f.association :facilities
+
       .col-md-2  
         = f.input :duration, collection: [:daily, :monthly, :bimonthly, :yearly]
-      .col-md-2
+      .col-md-1
         = f.input :usd_cost
     
-    / = f.input :position
-    
     .row
-      = f.input :description, as: :trix_editor
+      .col.md-8
+        = f.input :description, as: :trix_editor
 
-    .row
-      = f.input :pictures, as: :uploader, input_html: { sortable: true }
+      .col-md-4
+        = f.input :pictures, as: :uploader, input_html: { sortable: true }
 
   .form-actions
     = f.button :submit,  class: 'btn-success'

@@ -6,4 +6,8 @@ class Person < ApplicationRecord
   
   has_one :picture, as: :assetable, dependent: :destroy
   fileuploads :picture
+  
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

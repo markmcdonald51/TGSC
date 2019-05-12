@@ -69,6 +69,7 @@ class MembershipLevelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def membership_level_params
-      params.require(:membership_level).permit(:name, :position, :description, :duration, :usd_cost)
+      params.require(:membership_level).permit(:name, :position, :description, :duration, :usd_cost,
+      facility_ids: [] )
     end
 end

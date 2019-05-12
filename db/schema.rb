@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_11_013303) do
+ActiveRecord::Schema.define(version: 2019_05_12_024136) do
 
   create_table "assets", force: :cascade do |t|
     t.string "data_file_name", null: false
@@ -41,6 +41,32 @@ ActiveRecord::Schema.define(version: 2019_05_11_013303) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["membership_level_id"], name: "index_customers_on_membership_level_id"
+  end
+
+  create_table "facilities", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "membership_accessable_facilities", force: :cascade do |t|
+    t.integer "facility_id"
+    t.integer "membership_level_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["facility_id"], name: "index_membership_accessable_facilities_on_facility_id"
+    t.index ["membership_level_id"], name: "index_membership_accessable_facilities_on_membership_level_id"
+  end
+
+  create_table "membership_accessable_facilties", force: :cascade do |t|
+    t.integer "facility_id"
+    t.integer "membership_level_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["facility_id"], name: "index_membership_accessable_facilties_on_facility_id"
+    t.index ["membership_level_id"], name: "index_membership_accessable_facilties_on_membership_level_id"
   end
 
   create_table "membership_levels", force: :cascade do |t|

@@ -1,8 +1,9 @@
 h1 Listing customers
 
-table.table
+table.table.table-hover id='dttb'
   thead
     tr
+      th Name
       th Membership level
       th Aasm state
       th Last pay date
@@ -13,7 +14,8 @@ table.table
   tbody
     - @customers.each do |customer|
       tr
-        td = customer.membership_level
+        td = customer.contact.full_name
+        td = customer.membership_level.name
         td = customer.aasm_state
         td = customer.last_pay_date
         td = link_to 'Show', customer
