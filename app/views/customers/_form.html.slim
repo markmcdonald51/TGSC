@@ -14,6 +14,12 @@
         = f.input :aasm_state
       .col-md-6  
         = f.input :last_pay_date, as: :date, order: [:month, :day, :year]
+     
+    .row
+      .col-md-4
+        = f.input :member_since, as: :date, order: [:month, :day, :year]
+      .col-md-4
+        = f.input :country_of_citizenship, as: :country, priority: ['KH','US', 'FR'] 
 
   .form-actions
-    = f.button :submit
+    = f.button :submit,  class: 'btn-success'

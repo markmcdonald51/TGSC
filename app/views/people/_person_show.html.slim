@@ -1,0 +1,20 @@
+
+p
+  strong First name:
+  = person.first_name
+p
+  strong Last name:
+  = person.last_name
+p
+  strong Birth date:
+  = person.birth_date.to_formatted_s(:long) 
+p
+  strong Email:
+  = person.email
+p
+  strong Mobile phone:
+  = person.mobile_phone
+p
+  strong Full address:
+  = person.full_address
+

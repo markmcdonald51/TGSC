@@ -1,24 +1,41 @@
 p#notice = notice
 
 .row
-  .col-md-3
-    = image_tag @customer.contact.picture.url
+  .col-md-4
+    h4.text-center = @customer.contact.full_name.upcase
+    = image_tag @customer.contact.picture.url(:profile), class: "rounded mx-auto d-block" if @customer.contact.picture.present?
+
+  .col-md-4
+    = render partial: '/people/person_show', locals: { person: @customer.contact}
+
 
   .col-md-4
     p
-      strong Membership level:
+      strong Country of citizenship: 
+      = @customer.country_of_citizenship
+
+    p
+      strong Member since: 
+      = @customer.member_since.to_formatted_s(:long) 
+
+    
+    p
+      strong Membership level: 
       = @customer.membership_level.name
+
+    p
+      strong Last pay date: 
+      = @customer.last_pay_date.to_formatted_s(:long) 
+      
     p
       strong Aasm state:
-      = @customer.aasm_state
-    p
-      strong Last pay date:
-      = @customer.last_pay_date
+      = @customer.aasm_state      
 
-  .col-md-5
+
     
+.row
+  .col-md-12
 
-
-=> link_to 'Edit', edit_customer_path(@customer)
-'|
-=< link_to 'Back', customers_path
+    => link_to 'Edit', edit_customer_path(@customer)
+    '|
+    =< link_to 'Back', customers_path

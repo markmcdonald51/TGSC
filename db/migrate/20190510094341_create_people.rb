@@ -8,8 +8,8 @@ class CreatePeople < ActiveRecord::Migration[5.2]
       t.string :mobile_phone
       t.string :full_address
       t.references :personable, polymorphic: true
-      t.decimal :lat
-      t.decimal :lng
+      t.decimal :latitude
+      t.decimal :longitude  
 
       t.timestamps
     end

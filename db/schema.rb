@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 2019_05_12_024136) do
     t.integer "membership_level_id"
     t.string "aasm_state"
     t.date "last_pay_date"
+    t.date "member_since"
+    t.string "country_of_citizenship"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["membership_level_id"], name: "index_customers_on_membership_level_id"
@@ -88,8 +90,8 @@ ActiveRecord::Schema.define(version: 2019_05_12_024136) do
     t.string "full_address"
     t.string "personable_type"
     t.integer "personable_id"
-    t.decimal "lat"
-    t.decimal "lng"
+    t.decimal "latitude"
+    t.decimal "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["personable_type", "personable_id"], name: "index_people_on_personable_type_and_personable_id"

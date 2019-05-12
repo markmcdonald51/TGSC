@@ -37,6 +37,7 @@ gem 'trix-rails', require: 'trix'
 gem 'devise'
 gem 'ajax-datatables-rails'
 gem 'jquery-datatables'
+gem 'country_select'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
