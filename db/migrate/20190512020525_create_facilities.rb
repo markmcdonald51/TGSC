@@ -4,6 +4,8 @@ class CreateFacilities < ActiveRecord::Migration[5.2]
       t.string :name
       t.text :description
       t.integer :position
+      t.string :status
+      #hours_operational 
       t.timestamps
     end
   end

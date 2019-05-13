@@ -3,6 +3,7 @@ table.table
   thead
     tr
       th Name
+      th Status
       th Description
       th
       th
@@ -12,6 +13,7 @@ table.table
     - @facilities.each do |facility|
       tr id="#{facility.sortable_id}"
         td = facility.name
+        td = facility.status
         td = facility.description
         td = link_to 'Show', facility
         td = link_to 'Edit', edit_facility_path(facility)

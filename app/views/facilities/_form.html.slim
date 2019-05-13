@@ -4,8 +4,11 @@
 
   .form-inputs
     .row
-      .col.md-12
+      .col.md-9
         = f.input :name, class: 'input-lg'
+      
+      .col-md-3
+        = f.input :status, collection: [:operational, :closed]
 
     .row
       .col.md-12

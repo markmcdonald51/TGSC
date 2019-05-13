@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+   ['Swimming Pool',
+    "Volleyball Court with Roof",
+    'Steam / Suana',
+    'Restaurant',
+    'Hotel',
+    'Gym & Fitness',
+    'Football Pitches',
+    'Table Pingpong',
+    'Coffee Shop'].each do |f|
+      Facility.create!(name: f)
+    end 
+

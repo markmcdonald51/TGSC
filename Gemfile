@@ -38,7 +38,7 @@ gem 'ajax-datatables-rails'
 gem 'jquery-datatables'
 gem 'country_select'
 
-#gem 'devise'
+gem 'devise'
 #gem 'omniauth'
 #gem 'omniauth-twitter'
 gem 'omniauth-facebook'
