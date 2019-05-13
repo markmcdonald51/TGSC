@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_12_024136) do
+ActiveRecord::Schema.define(version: 2019_05_13_051132) do
 
   create_table "assets", force: :cascade do |t|
     t.string "data_file_name", null: false
@@ -95,6 +95,16 @@ ActiveRecord::Schema.define(version: 2019_05_12_024136) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["personable_type", "personable_id"], name: "index_people_on_personable_type_and_personable_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "uid"
+    t.string "provider"
+    t.string "name"
+    t.string "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

@@ -7,8 +7,18 @@
       .col-sm-4.offset-md-1.py-4
         h4.text-white Options
         ul.list-unstyled
-          li
-            a.text-white href="#" Login
+          li      
+            #user_nav
+            - if current_user
+              |  Signed in as 
+              strong
+                = current_user.name
+              | ! 
+              = link_to "Sign out", signout_path, id: "sign_out"
+            - else
+              = link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"
+        
+        
           li
             a.text-white href="#"  Facilities
           li

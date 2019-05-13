@@ -34,10 +34,17 @@ gem 'country_select'
 gem 'geocoder'
 gem 'trix-rails', require: 'trix'
 #gem "nested_form", github: 'markmcdonald51/nested_form' 
-gem 'devise'
 gem 'ajax-datatables-rails'
 gem 'jquery-datatables'
 gem 'country_select'
+
+#gem 'devise'
+#gem 'omniauth'
+#gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+#gem 'omniauth-google-oauth2'
+
+
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -50,7 +57,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use ActiveStorage variant
+# Use ActiveStorage variantivise
 # gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
