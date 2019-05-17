@@ -10,8 +10,8 @@ html
   body
     = render '/layouts/top_nav_bar'
     .container-fluid 
-      p.notice = notice
-      p.alert = alert
-
-
+      - if notice
+        p.notice = notice
+      - if alert
+        p.alert = alert
       = yield
