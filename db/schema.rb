@@ -112,6 +112,8 @@ ActiveRecord::Schema.define(version: 2019_05_13_101819) do
     t.string "name"
     t.string "oauth_token"
     t.datetime "oauth_expires_at"
+    t.string "user_group"
+    t.string "aasm_state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

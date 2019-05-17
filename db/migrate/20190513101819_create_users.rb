@@ -39,7 +39,8 @@ class CreateUsers < ActiveRecord::Migration[5.2]
         t.string :name
         t.string :oauth_token
         t.datetime :oauth_expires_at
-
+        t.string :user_group
+        t.string :aasm_state
       # Uncomment below if timestamps were not included in your original model.
        t.timestamps null: false
     end
