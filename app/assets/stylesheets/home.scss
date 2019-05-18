@@ -22,6 +22,18 @@ body {
 .carousel-caption {
   bottom: 3rem;
   z-index: 10;
+  //font-weight: bold;
+  
+  .black_text {
+    color: black;
+  }
+  
+  h1 {
+    color: black;
+  }
+  
+  
+  
 }
 
 /* Declare heights because of positioning of img element */
@@ -36,6 +48,8 @@ body {
     height: 32rem;
   }
 }
+
+
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
@@ -92,3 +106,16 @@ body {
     margin-top: 7rem;
   }
 }
+
+
+
+img {
+  opacity: 0.5;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+
+
+
+
+

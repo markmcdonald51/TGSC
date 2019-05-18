@@ -5,6 +5,9 @@ main role="main"
       li.active data-slide-to="0" data-target="#myCarousel" 
       li data-slide-to="1" data-target="#myCarousel" 
       li data-slide-to="2" data-target="#myCarousel" 
+      li data-slide-to="3" data-target="#myCarousel"
+      li data-slide-to="4" data-target="#myCarousel"
+      li data-slide-to="5" data-target="#myCarousel"
     .carousel-inner
      
       - @facilities.each_with_index  do |f,i|
@@ -15,7 +18,8 @@ main role="main"
             .container
               .carousel-caption.text-left
                 h1 = f.name
-                p = f.description.try(:html_safe)
+                p
+                  .black_text = f.description.try(:html_safe)
                 p
                   a.btn.btn-lg.btn-primary href="#" role="button"  Sign up today
           
