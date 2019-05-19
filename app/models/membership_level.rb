@@ -9,5 +9,13 @@ class MembershipLevel < ApplicationRecord
   
   has_many :membership_accessable_facilities
   has_many :facilities, through: :membership_accessable_facilities
+  
+  translates :name, :description
      
 end
+
+
+
+
+
+

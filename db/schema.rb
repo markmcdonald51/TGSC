@@ -46,12 +46,22 @@ ActiveRecord::Schema.define(version: 2019_05_13_101819) do
   end
 
   create_table "facilities", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
     t.integer "position"
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "facility_translations", force: :cascade do |t|
+    t.integer "facility_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "tagline"
+    t.text "description"
+    t.index ["facility_id"], name: "index_facility_translations_on_facility_id"
+    t.index ["locale"], name: "index_facility_translations_on_locale"
   end
 
   create_table "membership_accessable_facilities", force: :cascade do |t|
@@ -63,10 +73,19 @@ ActiveRecord::Schema.define(version: 2019_05_13_101819) do
     t.index ["membership_level_id"], name: "index_membership_accessable_facilities_on_membership_level_id"
   end
 
-  create_table "membership_levels", force: :cascade do |t|
+  create_table "membership_level_translations", force: :cascade do |t|
+    t.integer "membership_level_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "name"
-    t.string "position"
     t.text "description"
+    t.index ["locale"], name: "index_membership_level_translations_on_locale"
+    t.index ["membership_level_id"], name: "index_membership_level_translations_on_membership_level_id"
+  end
+
+  create_table "membership_levels", force: :cascade do |t|
+    t.string "position"
     t.string "duration"
     t.decimal "usd_cost"
     t.datetime "created_at", null: false

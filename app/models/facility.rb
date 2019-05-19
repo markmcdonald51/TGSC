@@ -5,5 +5,6 @@ class Facility < ApplicationRecord
   has_many :pictures, as: :assetable, dependent: :destroy
   fileuploads :pictures
   
+  translates :name, :tagline, :description
   
 end
