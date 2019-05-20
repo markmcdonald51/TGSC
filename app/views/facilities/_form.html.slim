@@ -23,23 +23,39 @@
   .form-actions
     = f.button :submit
     
-    
-    
- / 
-   = simple_form_for [:admin, @static_page] do |f|
-    %dl.tabs{ "data-tab" => "" }
-      - @locales.each_with_index do |lang, index|
-        - klass = index == 0 ? 'active' : ''
-        %dd{ class: klass }= link_to t("admin.languages.#{lang}"), "#panel2-#{index + 1}", class: "#{lang} flag"
-    .tabs-content
-      - @locales.each_with_index do |lang, index|
-        - klass2 = index == 0 ? 'active' : ''
-        .content{ class: klass2, id: "panel2-#{index + 1}"}
-          = f.globalize_fields_for lang.to_sym do |g|
-            = g.input :title, label: "Title"
-            = g.cktext_area :body, rows: 15, class: 'ckeditor'
 
-      = f.button :submit, t('admin.buttons.submit'), class: 'new-submission'   
+ul#myTab.nav.nav-tabs role="tablist" 
+  - valid_languages.keys.each_with_index do |k,i|
+    - active = 'active' if i == 0
+    li.nav-item
+      a id="#{k}-tab" class="nav-link #{active}" data-toggle="tab" href="##{k}" role="tab"  
+        = valid_languages[k].titleize 
+
+#myTabContent.tab-content
+  - valid_languages.keys.each_with_index do |k,i|
+    - active = 'active' if i == 0
+    div id="#{k}" class="tab-pane fade in #{active}" role="tabpanel"
+      h1 = valid_languages[k].titleize 
+      p test
+
     
+
     
-    
+/ 
+  = simple_form_for [:admin, @static_page] do |f|
+  %dl.tabs{ "data-tab" => "" }
+    - @locales.each_with_index do |lang, index|
+      - klass = index == 0 ? 'active' : ''
+      %dd{ class: klass }= link_to t("admin.languages.#{lang}"), "#panel2-#{index + 1}", class: "#{lang} flag"
+  .tabs-content
+    - @locales.each_with_index do |lang, index|
+      - klass2 = index == 0 ? 'active' : ''
+      .content{ class: klass2, id: "panel2-#{index + 1}"}
+        = f.globalize_fields_for lang.to_sym do |g|
+          = g.input :title, label: "Title"
+          = g.cktext_area :body, rows: 15, class: 'ckeditor'
+
+    = f.button :submit, t('admin.buttons.submit'), class: 'new-submission'   
+
+
+
