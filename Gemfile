@@ -44,6 +44,7 @@ gem 'devise'
 gem 'omniauth-facebook'
 #gem 'omniauth-google-oauth2'
 gem 'globalize'
+gem 'globalize-accessors'
 gem 'easy_translate'
 
 

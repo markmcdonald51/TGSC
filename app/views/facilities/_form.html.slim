@@ -4,18 +4,31 @@
 
   .form-inputs
     .row
-      .col.md-9
-        = f.input :name, class: 'input-lg'
-      
+    
+      ul#myTab.nav.nav-tabs role="tablist" 
+        - valid_languages.keys.each_with_index do |k,i|
+          - active = 'active' if i == 0
+          li class="nav-item #{active}" 
+            a id="#{k}-tab" class="nav-link" data-toggle="tab" href="##{k}" role="tab"  
+              = valid_languages[k].titleize 
+
+      #myTabContent.tab-content
+        - valid_languages.keys.each_with_index do |k,i|
+          - active = 'active' if i == 0
+          div id="#{k}" class="tab-pane fade in #{active}" role="tabpanel"
+            h1 = valid_languages[k].titleize
+            - Facility.globalize_attribute_names.grep(/#{k}$/).each do |n| 
+              - if n =~ /description/
+                = f.input n, as: :trix_editor
+              - else
+                = f.input n, class: 'input-lg'
+           
+    
+
+    .row
       .col-md-3
         = f.input :status, collection: [:operational, :closed]
-
-    .row
-      .col.md-12
-        = f.input :description, as: :trix_editor
-
-    .row
-      .col-md-12
+      .col.md-9  
         = f.input :pictures, as: :uploader, input_html: { sortable: true }
 
 
@@ -24,21 +37,6 @@
     = f.button :submit
     
 
-ul#myTab.nav.nav-tabs role="tablist" 
-  - valid_languages.keys.each_with_index do |k,i|
-    - active = 'active' if i == 0
-    li.nav-item
-      a id="#{k}-tab" class="nav-link #{active}" data-toggle="tab" href="##{k}" role="tab"  
-        = valid_languages[k].titleize 
-
-#myTabContent.tab-content
-  - valid_languages.keys.each_with_index do |k,i|
-    - active = 'active' if i == 0
-    div id="#{k}" class="tab-pane fade in #{active}" role="tabpanel"
-      h1 = valid_languages[k].titleize 
-      p test
-
-    
 
     
 / 

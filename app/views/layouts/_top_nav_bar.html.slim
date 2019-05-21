@@ -35,5 +35,12 @@
         circle cx"12" cy="13" r="4" /
       strong TG Sport Center and Condo Hotel
     button.navbar-toggler aria-controls="navbarHeader" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarHeader" data-toggle="collapse" type="button" 
-      span.navbar-toggler-icon
+    #nav
+      strong Language: 
+      - valid_languages.each_pair do |k,v|
+        = link_to_unless I18n.locale == k, v, locale: k 
+        | | 
+  
+    
+  span.navbar-toggler-icon
 

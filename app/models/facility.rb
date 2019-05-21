@@ -6,5 +6,8 @@ class Facility < ApplicationRecord
   fileuploads :pictures
   
   translates :name, :tagline, :description
+  globalize_accessors :locales => [:en, :km], :attributes => [:name, :tagline, :description]
+  
+  validates_uniqueness_of :name
   
 end

@@ -140,6 +140,8 @@ GEM
       activemodel (>= 4.2, < 6.1)
       activerecord (>= 4.2, < 6.1)
       request_store (~> 1.0)
+    globalize-accessors (0.2.1)
+      globalize (~> 5.0, >= 5.0.0)
     hashie (3.6.0)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
@@ -365,6 +367,7 @@ DEPENDENCIES
   file_validators
   geocoder
   globalize
+  globalize-accessors
   jbuilder (~> 2.5)
   jquery-datatables
   jquery-rails
