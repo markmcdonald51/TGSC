@@ -36,7 +36,6 @@ gem 'trix-rails', require: 'trix'
 #gem "nested_form", github: 'markmcdonald51/nested_form' 
 gem 'ajax-datatables-rails'
 gem 'jquery-datatables'
-gem 'country_select'
 
 gem 'devise'
 #gem 'omniauth'
