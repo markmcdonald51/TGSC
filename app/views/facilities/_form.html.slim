@@ -4,7 +4,7 @@
 
   .form-inputs
     .row
-      .col-md-10
+      .col-md-12
     
         ul#language_input.nav.nav-tabs role="tablist" 
           - valid_languages.keys.each_with_index do |k,i|
@@ -15,7 +15,7 @@
 
         #language_inputContent.tab-content
           - valid_languages.keys.each_with_index do |k,i|
-            - active = 'active' if i == 0
+            - active = 'active show' if i == 0
             div id="#{k}" class="tab-pane fade in #{active}" role="tabpanel" aria-labelledby="#{k}-tab"
               h1 = valid_languages[k].titleize
               - Facility.globalize_attribute_names.grep(/#{k}$/).each do |n| 
@@ -35,7 +35,7 @@
 
 
   .form-actions
-    = f.button :submit
+    = f.button :submit, class: "btn btn-primary"
     
 
 
