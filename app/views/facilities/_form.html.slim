@@ -4,24 +4,25 @@
 
   .form-inputs
     .row
+      .col-md-10
     
-      ul#myTab.nav.nav-tabs role="tablist" 
-        - valid_languages.keys.each_with_index do |k,i|
-          - active = 'active' if i == 0
-          li class="nav-item #{active}" 
-            a id="#{k}-tab" class="nav-link" data-toggle="tab" href="##{k}" role="tab"  
-              = valid_languages[k].titleize 
+        ul#language_input.nav.nav-tabs role="tablist" 
+          - valid_languages.keys.each_with_index do |k,i|
+            - active = 'active' if i == 0
+            li class="nav-item #{active}"
+              a id="#{k}-tab" class="nav-link" data-toggle="tab" href="##{k}" role="tab"  aria-controls="nav-home" aria-selected="#{active.present? ? 'true' : 'false'}" 
+                = valid_languages[k].titleize
 
-      #myTabContent.tab-content
-        - valid_languages.keys.each_with_index do |k,i|
-          - active = 'active' if i == 0
-          div id="#{k}" class="tab-pane fade in #{active}" role="tabpanel"
-            h1 = valid_languages[k].titleize
-            - Facility.globalize_attribute_names.grep(/#{k}$/).each do |n| 
-              - if n =~ /description/
-                = f.input n, as: :trix_editor
-              - else
-                = f.input n, class: 'input-lg'
+        #language_inputContent.tab-content
+          - valid_languages.keys.each_with_index do |k,i|
+            - active = 'active' if i == 0
+            div id="#{k}" class="tab-pane fade in #{active}" role="tabpanel" aria-labelledby="#{k}-tab"
+              h1 = valid_languages[k].titleize
+              - Facility.globalize_attribute_names.grep(/#{k}$/).each do |n| 
+                - if n =~ /description/
+                  = f.input n, as: :trix_editor
+                - else
+                  = f.input n, class: 'input-lg'
            
     
 
