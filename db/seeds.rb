@@ -18,4 +18,7 @@
     'Coffee Shop'].each do |f|
       Facility.create!(name: f)
     end 
-
+    
+    ['Full', 'Football Only', 'Pool/Sauna', 'Condo Rental', 'Hotel'].each do |n| 
+      MembershipLevel.create!(name: n)
+    end

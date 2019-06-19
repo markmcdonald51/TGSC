@@ -85,7 +85,9 @@ ActiveRecord::Schema.define(version: 2019_05_13_101819) do
   end
 
   create_table "membership_levels", force: :cascade do |t|
-    t.string "position"
+    t.string "name"
+    t.integer "position"
+    t.text "description"
     t.string "duration"
     t.decimal "usd_cost"
     t.datetime "created_at", null: false
