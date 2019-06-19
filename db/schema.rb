@@ -101,8 +101,9 @@ ActiveRecord::Schema.define(version: 2019_05_13_101819) do
     t.string "full_address"
     t.string "personable_type"
     t.integer "personable_id"
-    t.decimal "latitude"
-    t.decimal "longitude"
+    t.decimal "latitude", precision: 10, scale: 6
+    t.decimal "longitude", precision: 10, scale: 6
+    t.string "gender", default: "m"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["personable_type", "personable_id"], name: "index_people_on_personable_type_and_personable_id"

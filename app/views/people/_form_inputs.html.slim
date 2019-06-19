@@ -14,10 +14,13 @@
             end_year: Date.today.year - 12, order: [:month, :day, :year]
       
       .row
-        .col-md-4
+        .col-md-3
           = f.input :email, required: true      
-        .col-md-4
+        .col-md-3
           = f.input :mobile_phone
+        .col-md-2
+          = f.input :gender, collection:['man' => 'm', 'woman' => 'f'], as: :check_boxes
+          
         .col-md-4
           = f.input :picture, as: :uploader, input_html: { sortable: true }, :confirm_delete => true
       
