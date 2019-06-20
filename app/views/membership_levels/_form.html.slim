@@ -10,7 +10,7 @@
         = f.association :facilities
 
       .col-md-2  
-        = f.input :duration, collection: [:daily, :monthly, :bimonthly, :yearly]
+        = f.input :duration, collection: MembershipLevel::DURATIONS
       .col-md-1
         = f.input :usd_cost
     

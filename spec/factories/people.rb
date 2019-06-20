@@ -19,8 +19,8 @@ FactoryBot.define do
       full_address { Faker::Address.full_address }
       # personable { nil }
       gender { ['m', 'f'].sample }
-      latitude { "9.99" }
-      longitude { "9.99" }
+      latitude { Faker::Address.latitude }
+      longitude { Faker::Address.longitude }
         
     end
   end

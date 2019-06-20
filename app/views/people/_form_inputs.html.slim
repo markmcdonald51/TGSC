@@ -19,7 +19,7 @@
         .col-md-3
           = f.input :mobile_phone
         .col-md-2
-          = f.input :gender, collection:['man' => 'm', 'woman' => 'f'], as: :check_boxes
+          = f.input :gender, collection: {'man' => 'm', 'woman' => 'f'}, as: :check_boxes
           
         .col-md-4
           = f.input :picture, as: :uploader, input_html: { sortable: true }, :confirm_delete => true

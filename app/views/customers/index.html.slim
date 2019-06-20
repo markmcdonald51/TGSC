@@ -1,9 +1,10 @@
 h1 Listing customers
 
-table.table.table-hover id='dttb'
+table.table.table-striped.table-hover id='dttb'
   thead
     tr
       th Name
+      th Citizen
       th Membership level
       th Aasm state
       th Last pay date
@@ -15,6 +16,7 @@ table.table.table-hover id='dttb'
     - @customers.each do |customer|
       tr
         td = customer.contact.full_name
+        td = customer.country_of_citizenship
         td = customer.membership_level.name
         td = customer.aasm_state
         td = customer.last_pay_date.to_formatted_s(:long) 
@@ -25,3 +27,8 @@ table.table.table-hover id='dttb'
 br
 
 = link_to 'New Customer', new_customer_path
+
+javascript:
+  $(document).ready(function() {
+    $('#dttb').dataTable();
+  });

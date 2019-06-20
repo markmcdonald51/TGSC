@@ -7,18 +7,39 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-   ['Swimming Pool',
-    "Volleyball Court with Roof",
-    'Steam / Suana',
-    'Restaurant',
-    'Hotel',
-    'Gym & Fitness',
-    'Football Pitches',
-    'Table Pingpong',
-    'Coffee Shop'].each do |f|
-      Facility.create!(name: f)
-    end 
-    
-    ['Full', 'Football Only', 'Pool/Sauna', 'Condo Rental', 'Hotel'].each do |n| 
-      MembershipLevel.create!(name: n)
-    end
+['Swimming Pool',
+"Volleyball Court with Roof",
+'Steam / Suana',
+'Restaurant',
+'Hotel',
+'Gym & Fitness',
+'Football Pitches',
+'Table Pingpong',
+'Coffee Shop'].each do |f|
+  Facility.create!(name: f, 
+    description: Faker::Lorem.paragraph)
+end 
+
+[['Full', '60'], 
+ ['Football Only', '25'],
+ ['Pool/Sauna', '25'],
+ ['Condo Rental', '350'],
+ ['Hotel', '20']].each do |name, cost| 
+    MembershipLevel.create!(
+      name: name, 
+      usd_cost: cost,
+      duration: MembershipLevel::DURATIONS.sample ,
+      facilities: Facility.all.sample([1.9].sample),
+      description: Faker::Lorem.paragraph )
+end
+
+aasm_states = Customer.aasm.states.map(&:name)  
+1.upto(100).each do
+  c = FactoryBot.build(:customer, :random)    
+  
+  #c.save!
+  c.aasm_state = aasm_states.sample
+  c.save!
+end
+
+

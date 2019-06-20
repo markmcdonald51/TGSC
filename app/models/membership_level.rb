@@ -11,6 +11,8 @@ class MembershipLevel < ApplicationRecord
   has_many :facilities, through: :membership_accessable_facilities
   
   translates :name, :description
+  
+  DURATIONS = [:daily, :monthly, :bimonthly, :yearly]
      
 end
 

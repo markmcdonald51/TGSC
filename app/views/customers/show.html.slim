@@ -16,7 +16,7 @@ p#notice = notice
 
     p
       strong Member since: 
-      = @customer.member_since.to_formatted_s(:long) 
+      = @customer.member_since.to_formatted_s(:long) if @customer.member_since
 
     
     p
