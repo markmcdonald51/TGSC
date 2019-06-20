@@ -3,9 +3,9 @@
     .col-md-12  
       .row
         .col-md-6
-          = f.input :first_name, required: true, autofocus: true
+          = f.input :first_name, required: true, autofocus: true, input_html: {class: 'form-control-lg'}
         .col-md-6
-          = f.input :last_name, required: true
+          = f.input :last_name, required: true,  input_html: {class: 'form-control-lg'}
       .row     
         .col-md-8
           = f.input :full_address, required: true
@@ -19,7 +19,7 @@
         .col-md-3
           = f.input :mobile_phone
         .col-md-2
-          = f.input :gender, collection: {'man' => 'm', 'woman' => 'f'}, as: :check_boxes
+          = f.input :gender, collection: {'man' => 'm', 'woman' => 'f'}, as: :radio_buttons
           
         .col-md-4
           = f.input :picture, as: :uploader, input_html: { sortable: true }, :confirm_delete => true

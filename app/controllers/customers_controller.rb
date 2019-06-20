@@ -4,7 +4,7 @@ class CustomersController < ApplicationController
   # GET /customers
   # GET /customers.json
   def index
-    @customers = Customer.all
+    @customers = Customer.includes(:contact,:membership_level).all
   end
 
   # GET /customers/1
@@ -72,6 +72,6 @@ class CustomersController < ApplicationController
     def customer_params
       params.require(:customer).permit(:membership_level_id, :aasm_state, :last_pay_date,
         :country_of_citizenship, :member_since,
-        contact_attributes: [:id, :first_name, :last_name, :birth_date, :email, :mobile_phone, :full_address])
+        contact_attributes: [:id, :first_name, :last_name, :birth_date, :email, :mobile_phone, :full_address, :gender])
     end
 end
