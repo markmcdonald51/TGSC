@@ -14,19 +14,22 @@
               strong
                 = current_user.name
               | ! 
-              = link_to "Sign out", signout_path, id: "sign_out"
+              = link_to "Sign out", destroy_user_session_path, method: :delete, id: "sign_out"
+              
             - else
               = link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"
+              li
+                = link_to "Sign up", new_user_registration_path
         
-        
+        - if current_user
           li
-            a.text-white href="#"  Facilities
+            = link_to 'Customers', customers_path, class: 'text-white'        
           li
-            a.text-white href="#"  Membership Levels
+            = link_to 'Facilities', facilities_path, class: 'text-white'
           li
-            a.text-white href="#" Logout
+            = link_to 'Membership Levels', membership_levels_path, class: 'text-white'
             
-            
+          
 .navbar.navbar-dark.bg-dark.shadow-sm
   .container.d-flex.justify-content-between
     a.navbar-brand.d-flex.align-items-center href="#" 

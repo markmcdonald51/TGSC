@@ -12,6 +12,11 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
+   
+  #devise_scope :user do
+  #  get 'signup', to: 'devise/sessions#new'
+  #  delete 'signout', to: 'devise/sessions#destroy'
+  #end
 
   root to: "home#index"
   
