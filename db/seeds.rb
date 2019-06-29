@@ -36,10 +36,19 @@ end
 aasm_states = Customer.aasm.states.map(&:name)  
 1.upto(100).each do
   c = FactoryBot.build(:customer, :random)    
-  
   #c.save!
   c.aasm_state = aasm_states.sample
   c.save!
 end
+
+(a..c).to_a.each_with_index do |floor_number, letter_floor|
+  1.upto(8).each |r|
+    r = Room.new(purpose: 'p', floor: 
+  end
+end
+
+
+
+
 
 

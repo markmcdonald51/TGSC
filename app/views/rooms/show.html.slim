@@ -1,0 +1,46 @@
+p#notice = notice
+
+p
+  strong Price per night:
+  = @room.room_price_per_night
+
+p
+  strong Purpose:
+  = @room.purpose
+p
+  strong Floor:
+  = @room.floor
+p
+  strong Room number:
+  = @room.room_number
+p
+  strong Number of windows:
+  = @room.number_of_windows
+p
+  strong Air conditioning:
+  = @room.air_conditioning
+p
+  strong Cable tv:
+  = @room.cable_tv
+p
+  strong Room service:
+  = @room.room_service
+p
+  strong Refrigerator:
+  = @room.refrigerator
+p
+  strong Kitchen:
+  = @room.kitchen
+p
+  strong Fan:
+  = @room.fan
+p
+  strong Daliy housekeeping:
+  = @room.daliy_housekeeping
+p
+  strong Max number of guests:
+  = @room.max_number_of_guests
+
+=> link_to 'Edit', edit_room_path(@room)
+'|
+=< link_to 'Back', rooms_path

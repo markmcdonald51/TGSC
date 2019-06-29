@@ -1,0 +1,21 @@
+h1 Listing Rooms
+
+table#dttb-rooms.responsive.nowrap.table.table-hover data-sort="true" data-source="#{url_for(format: :json)}"
+  thead
+    tr
+      th data-data="purpose" Purpose
+      th data-data="floor" Floor
+      th data-data="room_number" Room number
+      th data-data="air_conditioning" Air conditioning
+      /
+        th data-data="cable_tv" Cable tv
+        th data-data="room_service" Room service
+        th data-data="refrigerator" Refrigerator
+        th data-data="kitchen" Kitchen
+        th data-data="fan" Fan
+        th data-data="daliy_housekeeping" Daliy housekeeping
+      th data-data="max_number_of_guests" Max number of guests
+      th data-data="url" data-orderable="false" data-class-name="all" data-searchable="false" class="skip-export" width="100px"
+
+
+= link_to 'New Room', new_room_path
