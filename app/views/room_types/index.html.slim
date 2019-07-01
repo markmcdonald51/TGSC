@@ -16,11 +16,14 @@ table#dttb-room_types.responsive.nowrap.table.table-hover data-sort="true"
       th data-data="description" Description
       th data-data="in_service" In service
       th data-data="url" data-orderable="false" 
+      th data-data="url" data-orderable="false" 
+      th data-data="url" data-orderable="false" 
+      
       / th data-data="url" data-orderable="false" data-class-name="all" data-searchable="false" class="skip-export" width="100px"
     
   tbody.sortable  
     - @room_types.each do |r|
-      tr.sortable  id="#{r.sortable_id}"
+      tr  id="#{r.sortable_id}"
         td = r.name
         td = r.price_per_use
         td = r.meter_length
@@ -28,10 +31,9 @@ table#dttb-room_types.responsive.nowrap.table.table-hover data-sort="true"
         td = r.tag_line
         td = r.description
         td = r.in_service
-        td 
-          | #{link_to 'Show', r } 
-          | #{link_to 'Edit', edit_room_type_path(r)}
-          | #{link_to 'Destroy', r, method: :delete, data: { confirm: 'Are you sure?' }}
+        td = link_to 'Show', r
+        td = link_to 'Edit', edit_room_type_path(r)
+        td = link_to 'Destroy', r, data: { confirm: 'Are you sure?' }, method: :delete
               
 br
 
