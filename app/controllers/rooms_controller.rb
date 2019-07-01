@@ -4,7 +4,7 @@ class RoomsController < ApplicationController
   # GET /rooms
   # GET /rooms.json
   def index
-    @rooms = Room.all
+    @rooms = Room.includes(:room_type).all
   end
 
   # GET /rooms/1
@@ -64,12 +64,12 @@ class RoomsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_room
-      @room = Room.find(params[:id])
+      @room = Room.includes(:room_type).find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_params
-      params.require(:room).permit(:purpose, :room_price_per_night, :floor, :room_number,
+      params.require(:room).permit( :room_price_per_night, :floor, :room_number,
        :number_of_windows, :air_conditioning, :cable_tv, :room_service, :refrigerator, 
        :kitchen, :fan, :daliy_housekeeping, :max_number_of_guests)
     end

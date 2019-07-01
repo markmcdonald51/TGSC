@@ -41,9 +41,20 @@ aasm_states = Customer.aasm.states.map(&:name)
   c.save!
 end
 
-(a..c).to_a.each_with_index do |floor_number, letter_floor|
-  1.upto(8).each |r|
-    r = Room.new(purpose: 'p', floor: 
+['Hotel','Conference', 'Keroke', 'Massage','Restaurant'].each do |name|
+  RoomType.create!(name: name)
+end    
+
+  
+('A'..'D').to_a.each_with_index do |letter_floor, floor_number|
+  1.upto(8).each do |room_num|
+    Room.create!(room_type: RoomType.first, 
+      room_number: "#{letter_floor}-#{room_num}",
+      floor: floor_number + 1,
+      room_price_per_night: 20.00,
+      max_number_of_guests: 2,
+      number_of_windows: [1,2,3,4].sample)
+      
   end
 end
 

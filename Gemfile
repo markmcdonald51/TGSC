@@ -45,7 +45,7 @@ gem 'omniauth-facebook'
 gem 'globalize'
 gem 'globalize-accessors'
 gem 'easy_translate'
-gem 'pg'
+gem 'holder_rails'
 
 
 

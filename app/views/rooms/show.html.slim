@@ -1,12 +1,10 @@
-p#notice = notice
-
 p
   strong Price per night:
   = @room.room_price_per_night
 
 p
-  strong Purpose:
-  = @room.purpose
+  strong Room Type:
+  = @room.room_type.name
 p
   strong Floor:
   = @room.floor

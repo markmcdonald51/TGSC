@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_29_034428) do
+ActiveRecord::Schema.define(version: 2019_06_30_083443) do
 
   create_table "assets", force: :cascade do |t|
     t.string "data_file_name", null: false
@@ -111,8 +111,33 @@ ActiveRecord::Schema.define(version: 2019_06_29_034428) do
     t.index ["personable_type", "personable_id"], name: "index_people_on_personable_type_and_personable_id"
   end
 
+  create_table "room_type_translations", force: :cascade do |t|
+    t.integer "room_type_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "tagline"
+    t.text "description"
+    t.index ["locale"], name: "index_room_type_translations_on_locale"
+    t.index ["room_type_id"], name: "index_room_type_translations_on_room_type_id"
+  end
+
+  create_table "room_types", force: :cascade do |t|
+    t.string "name"
+    t.decimal "price_per_use"
+    t.decimal "meter_length"
+    t.decimal "meter_width"
+    t.string "tag_line"
+    t.text "description"
+    t.boolean "in_service"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "rooms", force: :cascade do |t|
-    t.string "purpose"
+    t.integer "room_type_id"
     t.integer "floor"
     t.string "room_number"
     t.integer "number_of_windows", default: 1
@@ -127,6 +152,7 @@ ActiveRecord::Schema.define(version: 2019_06_29_034428) do
     t.decimal "room_price_per_night"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["room_type_id"], name: "index_rooms_on_room_type_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -2,12 +2,10 @@ class Room < ApplicationRecord
   has_many :pictures, as: :assetable, dependent: :destroy
   fileuploads :pictures
   
-  PURPOSE = {
-    h: 'Hotel',
-    c: 'Conference',
-    k: 'Keroke',
-    m: 'Massage',
-    r: 'Restaurant',    
-  }
+  validates_presence_of  :room_type, :max_number_of_guests, :room_price_per_night , :floor 
+  validates_uniqueness_of :room_number
+
+
+  belongs_to :room_type
   
 end

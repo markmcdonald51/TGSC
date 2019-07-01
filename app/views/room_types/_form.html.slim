@@ -1,0 +1,31 @@
+= simple_form_for(@room_type,  wrapper: :input_group) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+
+  .form-inputs
+    .row
+      .col-md-4
+        = f.input :name, class: 'input-lg',  append: 'room'
+      .col-md-2
+        = f.input :price_per_use, required: true, prepend: '$'
+      .col-md-2
+        = f.input :meter_length, append: 'meters'
+      .col-md-2  
+        = f.input :meter_width,append: 'meters'
+      .col-md-2
+        = f.input :in_service  
+
+    .row
+      .col-md-6
+        = f.input :tag_line
+      .col-md-6 
+       = f.input :description, as: :trix_editor
+
+    .row
+      .col-md-12
+      = f.input :pictures, as: :uploader, input_html: { sortable: true }
+
+
+  .form-actions
+    = f.button :submit

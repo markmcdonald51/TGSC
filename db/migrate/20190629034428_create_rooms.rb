@@ -1,7 +1,7 @@
 class CreateRooms < ActiveRecord::Migration[5.2]
   def change
     create_table :rooms do |t|
-      t.string :purpose
+      t.belongs_to :room_type
       t.integer :floor
       t.string :room_number
       t.integer :number_of_windows, default: 1

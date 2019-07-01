@@ -3,28 +3,34 @@
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
   .form-inputs
     .row
-      .col-md-4
+      .col-md-3
+        = f.input :room_number                
         = f.input :room_price_per_night, required: true, prepend: '$'
-
-        = f.input :purpose, collection: Room::PURPOSE.invert, label: 'Room Purpose' , append: 'room'    
-        = f.input :max_number_of_guests, hint: 'Without surcharge'
-        
-      .col-md-4   
-        = f.input :room_number   
+        = f.association :room_type
+      .col-md-2                 
+        = f.input :max_number_of_guests, hint: 'Without surcharge' 
         = f.input :floor        
         = f.input :number_of_windows
 
-      .col-md-4 
-        = f.input :air_conditioning
-        = f.input :cable_tv
-        = f.input :room_service
-        = f.input :refrigerator
-        = f.input :kitchen
-        = f.input :fan
-        = f.input :daliy_housekeeping
+      .col-md-7
+        .row
+          .col-md-4 
+            = f.input :air_conditioning
+            = f.input :cable_tv       
+          .col-md-4 
+            = f.input :kitchen
+            = f.input :fan
+            = f.input :daliy_housekeeping
+          .col-md-4   
+            = f.input :room_service
+            = f.input :refrigerator
+        .row 
+          .col-md-12 
+            = f.input :pictures, as: :uploader, input_html: { sortable: true }
+        
+        
+        / = f.input :room_status ?
 
-    .row
-      = f.input :pictures, as: :uploader, input_html: { sortable: true }
 
   .form-actions
     = f.button :submit, class: 'btn btn-primary btn-lg'
