@@ -23,7 +23,7 @@ table#dttb-room_types.responsive.nowrap.table.table-hover data-sort="true"
     
   tbody.sortable  
     - @room_types.each do |r|
-      tr  id="#{r.sortable_id}"
+      tr id="#{r.sortable_id}"
         td = r.name
         td = r.price_per_use
         td = r.meter_length

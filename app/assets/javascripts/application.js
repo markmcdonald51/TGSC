@@ -22,7 +22,7 @@
 //= require rails_sortable
 // require select2_simple_form
 
-
+//= require holder
 //= require turbolinks
 //= require datatables
 //= require_tree .
