@@ -1,14 +1,14 @@
 FactoryBot.define do
   factory :person do
-    first_name { "MyString" }
-    last_name { "MyString" }
+    first_name { "John" }
+    last_name { "Doe" }
     birth_date { "2019-05-10" }
-    email { "MyString" }
-    mobile_phone { "MyString" }
-    full_address { "MyString" }
+    email { "doe@gmail.com" }
+    mobile_phone { "201-212-2211" }
+    full_address { "1730 Rhode Island Ave, Washington DC, USA" }
     personable { nil }
-    latitude { "9.99" }
-    longitude { "9.99" }
+    #latitude { "9.99" }
+    #longitude { "9.99" }
     
     trait :random do
       first_name { Faker::Name.first_name }
